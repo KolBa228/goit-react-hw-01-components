@@ -1,4 +1,4 @@
-export const Transactions = ({ children }) => {
+export const Transactions = ({ transactions }) => {
     return (
         <table class="transaction-history">
             <thead>
@@ -9,7 +9,13 @@ export const Transactions = ({ children }) => {
                 </tr>
             </thead>
             <tbody>
-            {children}
+            {transactions.map(({ id, type, amount, currency }) => (
+          <tr key={id}>
+            <td>{type}</td>
+            <td>{amount}</td>
+            <td>{currency}</td>
+          </tr>
+        ))}
             </tbody>
         </table>
     )
