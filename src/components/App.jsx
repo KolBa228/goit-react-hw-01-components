@@ -1,10 +1,12 @@
 import { UserCart } from "./UserCart/UserCart";
 import { StatisticTable } from './Statistics/Statistics'
 import { FriendsList } from './Friends/Friends'
+import { Transactions } from './Transactions/Transactions'
 
 import user from 'components/user.json';
 import stats from 'components/data.json';
 import friends from 'components/friends.json';
+import transactions from 'components/transactions.json';
 
 // console.log(user);
 
@@ -29,6 +31,15 @@ export const App = () => {
     </li>
   ))}
       </FriendsList>
+      <Transactions>
+        {transactions.map(({ id, type, amount, currency }) => (
+          <tr key={id}>
+            <td>{type}</td>
+            <td>{amount}</td>
+            <td>{currency}</td>
+          </tr>
+        ))}
+      </Transactions>
     </div>
   );
 };
