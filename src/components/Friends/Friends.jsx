@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 export const FriendsList = ({ friends }) => {
   return (
     <section className="friends">
@@ -14,4 +15,15 @@ export const FriendsList = ({ friends }) => {
       </ul>
     </section>
   );
+};
+
+FriendsList.propTypes = {
+  friends: PropTypes.arrayOf(
+    PropTypes.shape({
+      avatar: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      isOnline: PropTypes.bool.isRequired,
+      id: PropTypes.number.isRequired,
+    })
+  ).isRequired,
 };

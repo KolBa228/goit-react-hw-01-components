@@ -1,5 +1,5 @@
 import { UserCart } from "./UserCart/UserCart";
-import { StatisticTable } from './Statistics/Statistics'
+import { Statistics } from './Statistics/Statistics'
 import { FriendsList } from './Friends/Friends'
 import { Transactions } from './Transactions/Transactions'
 
@@ -14,8 +14,7 @@ export const App = () => {
   return (
     <div>
       <UserCart {...user} />
-      <StatisticTable stats={stats}>
-      </StatisticTable>
+      <Statistics title="Upload stats" stats={stats} />
       <FriendsList friends={friends} />
       <Transactions transactions={transactions} />
     </div>
